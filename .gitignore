@@ -1,0 +1,15 @@
+# Claude Code local state
+.claude/worktrees/
+.claude/settings.local.json
+.claude/agent-memory-local/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
