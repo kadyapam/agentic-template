@@ -60,6 +60,15 @@ fi
 echo ""
 echo "→ Replacing template placeholders..."
 
+escape_sed_replacement() {
+  printf '%s' "$1" | sed -e 's/[\\&|]/\\&/g'
+}
+
+PROJECT_NAME_REPL="$(escape_sed_replacement "$PROJECT_NAME")"
+PROJECT_SLUG_REPL="$(escape_sed_replacement "$PROJECT_SLUG")"
+ORG_NAME_REPL="$(escape_sed_replacement "$ORG_NAME")"
+REPO_PREFIX_REPL="$(escape_sed_replacement "$REPO_PREFIX")"
+
 # Find all text files (skip .git, binary files, and this script)
 find . -type f \
   -not -path './.git/*' \
@@ -67,13 +76,15 @@ find . -type f \
   -not -name '*.gitkeep' \
   | while IFS= read -r file; do
     if file "$file" | grep -q 'text'; then
-      # Use | as sed delimiter to avoid conflicts with paths
-      sed -i '' \
-        -e "s|{{PROJECT_NAME}}|${PROJECT_NAME}|g" \
-        -e "s|{{PROJECT_SLUG}}|${PROJECT_SLUG}|g" \
-        -e "s|{{ORG_NAME}}|${ORG_NAME}|g" \
-        -e "s|{{REPO_PREFIX}}|${REPO_PREFIX}|g" \
-        "$file" 2>/dev/null || true
+      tmp_file="$(mktemp)"
+      sed \
+        -e "s|{{PROJECT_NAME}}|${PROJECT_NAME_REPL}|g" \
+        -e "s|{{PROJECT_SLUG}}|${PROJECT_SLUG_REPL}|g" \
+        -e "s|{{ORG_NAME}}|${ORG_NAME_REPL}|g" \
+        -e "s|{{REPO_PREFIX}}|${REPO_PREFIX_REPL}|g" \
+        "$file" > "$tmp_file"
+      cp "$tmp_file" "$file"
+      rm -f "$tmp_file"
     fi
   done
 

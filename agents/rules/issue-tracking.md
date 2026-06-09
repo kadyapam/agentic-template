@@ -29,6 +29,9 @@ Use these sections in this order:
 2. `## Goal`
 3. `## Pointers`
 4. `## Blocked on`
+5. `## Links`
+
+`## Links` should include linked PRs, wiki/confluence pages, and local sync note path.
 
 ## Update rules
 
@@ -41,18 +44,6 @@ For substantive cross-repo work, update in the same session:
 - Local memory (`memory/` and `sync/issues/`)
 - Linked issue/ticket (`GitHub` and/or `Jira`)
 - Linked docs memory (`GitHub Wiki` and/or `Confluence`) when public surfaces changed
-
-## Suggested issue/ticket body shape
-
-Use these sections in this order:
-
-1. `## Context`
-2. `## Goal`
-3. `## Pointers`
-4. `## Blocked on`
-5. `## Links`
-
-`## Links` should include submodule PRs, wiki/confluence pages, and local sync note path.
 
 ## Board workflow
 

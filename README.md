@@ -21,7 +21,7 @@ bash ./init.sh
 
 What `init.sh` does:
 
-- Replaces `{{PROJECT_NAME}}`, `{{PROJECT_SLUG}}`, `{{ORG_NAME}}`, and `{{REPO_PREFIX}}` across text files.
+- Replaces the project-name, slug, organization, and remote-prefix placeholders across text files.
 - Creates `.claude/rules` and `.claude/skills` symlinks to `agents/`.
 - Marks memory scripts executable.
 - Initializes git (if needed), creates an initial commit, and optionally sets `origin`.

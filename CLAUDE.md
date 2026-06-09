@@ -38,9 +38,9 @@ repos/                           # linked repositories or source trees
 - `/memory-compact` — compact inbox entries into a summary
 - `/sync-note "<topic>"` — create a sync note from the template
 - `/bump-pointer "<repo>"` — update a linked-repo pointer after upstream merge
-- `/handoff-open "<slug> \"<description>\""` — create a handoff prompt scaffold
+- `/handoff-open "<slug>" "<description>"` — create a handoff prompt scaffold
 - `/handoff-result "<slug>"` — scaffold the matching handoff result file
-- `/issue-open "\"<title>\" <repo>"` — open tracked long-running issue
+- `/issue-open "<title>" "<repo>"` — open tracked long-running issue
 - `/issue-close "<number>"` — close tracked issue with landing citations
 
 ## Daily operating checks

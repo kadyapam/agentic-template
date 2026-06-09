@@ -32,14 +32,14 @@ If a proposal moves business data touches into a gateway/client layer or introdu
 ## Safety rules
 
 - This repository is public. Never store secrets, tokens, credentials, or sensitive values.
-- Do not store product code here unless this repo is intentionally forked into a working project.
+- Keep product code in the project source tree that owns it. That may be this repo only when it has been intentionally forked into an active working project.
 - Never rewrite history on `main`.
 - Memory updates must be append-only through Git history.
 
 ## Hard rules
 
 1. This repository is public. Never store secrets or sensitive values.
-2. Do not store product code here.
+2. Keep product code in its owning source tree; this repo may own code only when intentionally used as an active project repo.
 3. Use this repo for orchestration docs, AI instructions, memory, handoffs, sync notes, and coordination updates.
 4. Keep memory updates append-only through Git history.
 5. Keep pointer updates minimal and deterministic.
@@ -53,7 +53,7 @@ Only the following may be committed to this repo:
 
 - AI instruction files (CLAUDE.md, AGENTS.md, .claude/, agents/)
 - Orchestration docs and checklists (playbooks/, sync/)
-- Pointer updates or repository-link updates (repos/*)
+- Pointer updates, repository-link updates, or source changes when this repo intentionally owns that source
 - AI memory entries and compactions (memory/)
 - Handoff prompt/result files (handoffs/active/, handoffs/archive/, handoffs/templates/)
 

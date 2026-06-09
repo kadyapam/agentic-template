@@ -29,8 +29,8 @@ globs:
 - Never delete or overwrite inbox entries — append only.
 - Never store secrets, tokens, or credentials in memory entries.
 - Use the `## Related` section to cross-reference sync notes and other entries.
-- Keep this template memory focused on cross-project coordination and platform-level decisions.
-- Store project-specific implementation memory inside the owning submodule when possible.
+- Keep shared memory focused on durable project decisions, coordination state, and outcomes.
+- Store implementation-specific memory near the owning source tree when the project has multiple repos or modules.
 
 ## External memory synchronization
 
