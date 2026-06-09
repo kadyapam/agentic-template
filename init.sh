@@ -4,8 +4,9 @@ set -euo pipefail
 # ──────────────────────────────────────────────────────────────
 # ai-agent-template init script
 #
-# Replaces template placeholders, creates symlinks, initializes
-# git, and prepares the repo for use. Self-deletes when done.
+# Replaces template placeholders in all text files, creates
+# symlinks, initializes git, and prepares the repo for use.
+# Self-deletes when done.
 # ──────────────────────────────────────────────────────────────
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
@@ -77,6 +78,7 @@ find . -type f \
   done
 
 echo "  ✓ Placeholders replaced"
+echo "  ✓ Includes README, AGENTS.md, CLAUDE.md, GEMINI.md, and other text files"
 
 # ── Create symlinks ──────────────────────────────────────────
 
@@ -158,7 +160,11 @@ echo "     - Copilot: auto-loads .github/copilot-instructions.md"
 echo "     - Cursor: auto-loads .cursorrules"
 echo "     - Gemini: use GEMINI.md as the entrypoint"
 echo ""
-echo "  4. Read the playbooks in playbooks/ for operational guides."
+echo "  4. Register durable task state in GitHub Issues and/or Jira for anything that may span sessions."
 echo ""
-echo "  5. Use handoffs/ for long-running cross-agent collaboration."
+echo "  5. Add GitHub Wiki and/or Confluence pages for stable reference material and runbooks."
+echo ""
+echo "  6. Read the playbooks in playbooks/ for operational guides."
+echo ""
+echo "  7. Use handoffs/ for long-running cross-agent collaboration."
 echo ""
